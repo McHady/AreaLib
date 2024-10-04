@@ -1,7 +1,6 @@
 using SquareLib;
 using SquareLib.Calculator;
 using SquareLib.Calculator.Inputs;
-using Xunit;
 
 namespace AreaLib.Tests
 {

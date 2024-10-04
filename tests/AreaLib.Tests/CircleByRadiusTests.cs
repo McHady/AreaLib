@@ -1,11 +1,6 @@
 ﻿using SquareLib.Calculator.Inputs;
 using SquareLib.Calculator;
 using SquareLib;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AreaLib.Tests
 {
