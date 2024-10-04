@@ -1,4 +1,4 @@
 ﻿namespace SquareLib.Calculator.Inputs;
 
-public record CircleWithRadius(double Radius);
+public record struct CircleWithRadius(double Radius);
 

@@ -5,7 +5,7 @@ namespace AreaLib.Tests
 {
     public class FunctionAreaCalculatorTests
     {
-        private record Rectangle(double A, double B);
+        private record struct Rectangle(double A, double B);
 
         private readonly IAreaCalculator<Rectangle> _sut = CalculatorFactoryBuilder.CreateFactory(builder => builder.WithCalculator<Rectangle>(input => input.A * input.B)).Build<Rectangle>();
 

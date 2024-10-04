@@ -1,5 +1,5 @@
 ﻿namespace AreaLib.Configuration;
 
-internal record CalculatorTypePair(Type Type, Type Calculator);
+internal record struct CalculatorTypePair(Type Type, Type Calculator);
 
-internal record CalculatorPair(Type Type, object Calculator);
+internal record struct CalculatorPair(Type Type, object Calculator);
