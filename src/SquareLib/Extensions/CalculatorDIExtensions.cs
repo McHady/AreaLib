@@ -24,15 +24,15 @@ public static class CalculatorDIExtensions
         ConfigurationBuilder config = new();
         builder.Invoke(config);
 
-        if (!config.AddedCalculatorTypes.Any() && !config.AddedCalculators.Any())
+        if (!config.AddedTypesWithCalculators.Any() && !config.AddedTypesWithImplementations.Any())
             return services;
 
-        foreach (var type in config.AddedCalculatorTypes)
+        foreach (var type in config.AddedTypesWithCalculators)
         {
             services.AddTransient(GetServiceType(type.Type), type.Calculator);
         }
 
-        foreach (var type in config.AddedCalculators)
+        foreach (var type in config.AddedTypesWithImplementations)
         {
             services.AddTransient(GetServiceType(type.Type), (services) => type.Calculator);
         }

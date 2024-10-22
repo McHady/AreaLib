@@ -3,6 +3,8 @@ using SquareLib.Calculator;
 
 namespace AreaLib.Tests
 {
+    using TestTupleInput = (double A, double B);
+
     public class ConfigurationTest
     {
         private record UnexpectedInput(double Data);
@@ -25,6 +27,20 @@ namespace AreaLib.Tests
             var calculator = factory.Build<TestInput>();
             TestInput input = new(0.55);
             Assert.Equal(input.Data, calculator.Calculate(input));
+        }
+
+        [Fact]
+        public void CalculatorConfig_IsNewCalculatorImplementationAdded()
+        {
+            var factory = CalculatorFactoryBuilder.CreateFactory(config =>
+            {
+                config.WithCalculator<TestTupleInput>(input => input.A * input.B);
+            });
+
+            var calculator = factory.Build<TestTupleInput>();
+            (double A, double B) input = (20, 10);
+
+            Assert.Equal(input.A * input.B, calculator.Calculate(input));  
         }
 
         [Fact]

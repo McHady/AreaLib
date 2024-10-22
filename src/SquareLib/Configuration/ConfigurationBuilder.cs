@@ -7,19 +7,19 @@ public class ConfigurationBuilder
 {
     public ConfigurationBuilder()
     {
-        this.AddedCalculatorTypes = new List<CalculatorTypePair>();
-        this.AddedCalculators = new List<CalculatorPair>();
+        this.AddedTypesWithCalculators = new List<TypeWithCalculatorPair>();
+        this.AddedTypesWithImplementations = new List<TypeWithImplementationPair>();
     }
 
     public ConfigurationBuilder WithCalculator<TInput, TCalculator>() where TCalculator : IAreaCalculator<TInput>
     {
-        this.AddedCalculatorTypes.Add(new (typeof(TInput), typeof(TCalculator)));
+        this.AddedTypesWithCalculators.Add(new (typeof(TInput), typeof(TCalculator)));
         return this;
     }
     
     public ConfigurationBuilder WithCalculator<TInput>(IAreaCalculator<TInput> calculator)
     {
-        this.AddedCalculators.Add(new CalculatorPair(typeof(TInput), calculator));
+        this.AddedTypesWithImplementations.Add(new (typeof(TInput), calculator));
         return this;
     }
 
@@ -29,7 +29,7 @@ public class ConfigurationBuilder
         return this;
     }
 
-    internal IList<CalculatorTypePair> AddedCalculatorTypes { get; set; }
+    internal List<TypeWithCalculatorPair> AddedTypesWithCalculators { get; set; }
 
-    internal List<CalculatorPair> AddedCalculators { get; }
+    internal List<TypeWithImplementationPair> AddedTypesWithImplementations { get; }
 }
