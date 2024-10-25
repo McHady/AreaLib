@@ -1,6 +1,5 @@
-using SquareLib;
-using SquareLib.Calculator;
-using SquareLib.Calculator.Inputs;
+using AreaLib.Calculator;
+using AreaLib.Calculator.Inputs;
 
 namespace AreaLib.Tests
 {
@@ -12,7 +11,7 @@ namespace AreaLib.Tests
         [InlineData(5f, 6f, 7f, 14.69694f)]
         [InlineData(0f, 0f, 0f, 0f)]
         [InlineData(3.14f, 4.72f, 5.00f, 7.19233f)]
-        [InlineData(3f, 5f, 4f, 6f)] // прямоугольный треугольник
+        [InlineData(3f, 5f, 4f, 6f)] // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         public void Calculator_IsAreaRight(double a, double b, double c, double expected)
         {
             Assert.Equal(expected, _sut.Calculate(new (a, b, c)), 0.0001);

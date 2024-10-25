@@ -1,22 +1,20 @@
-﻿using AreaLib.Configuration;
+﻿using AreaLib.Calculator;
+using AreaLib.Configuration;
+using AreaLib.Factory;
+using AreaLib.Factory.Impl;
 using Microsoft.Extensions.DependencyInjection;
-using SquareLib.Calculator;
-using SquareLib.Factory;
-using SquareLib.Factory.Impl;
 
-namespace SquareLib.Extensions;
+namespace AreaLib.Extensions;
 
-public static class CalculatorDIExtensions 
+public static class CalculatorDiExtensions
 {
-    public static IServiceCollection AddAreaCalculators(this IServiceCollection services, Action<ConfigurationBuilder>? builder = null)
-    {
-        services.AddTransient<ICalculatorFactory, DICalculatorFactory>();
-        services.AddCalculators();
-        services.AddConfiguratedCalculators(builder);
-        return services;
-    } 
+    public static IServiceCollection AddAreaCalculators(this IServiceCollection services,
+        Action<ConfigurationBuilder>? builder = null)
+        => services.AddTransient<ICalculatorFactory, DICalculatorFactory>()
+            .AddCalculators()
+            .AddConfiguredCalculators(builder);
 
-    private static IServiceCollection AddConfiguratedCalculators(this IServiceCollection services, Action<ConfigurationBuilder>? builder = null)
+    private static IServiceCollection AddConfiguredCalculators(this IServiceCollection services, Action<ConfigurationBuilder>? builder = null)
     {
         if (builder == null)
             return services;
@@ -34,7 +32,7 @@ public static class CalculatorDIExtensions
 
         foreach (var type in config.AddedTypesWithImplementations)
         {
-            services.AddTransient(GetServiceType(type.Type), (services) => type.Calculator);
+            services.AddTransient(GetServiceType(type.Type), (_) => type.Calculator);
         }
 
         return services;

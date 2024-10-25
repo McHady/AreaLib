@@ -1,8 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using SquareLib.Calculator.Impl;
-using SquareLib.Calculator.Inputs;
+﻿using AreaLib.Calculator.Impl;
+using AreaLib.Calculator.Inputs;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace SquareLib.Calculator
+namespace AreaLib.Calculator
 {
     internal static class CalculatorExtensions 
     {

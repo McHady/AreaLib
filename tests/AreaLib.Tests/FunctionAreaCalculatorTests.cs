@@ -1,6 +1,4 @@
-﻿using SquareLib;
-using SquareLib.Calculator;
-
+﻿using AreaLib.Calculator;
 using Rectangle = (double A, double B);
 
 namespace AreaLib.Tests

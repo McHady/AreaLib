@@ -1,9 +1,9 @@
 ﻿using AreaLib.Configuration;
+using AreaLib.Extensions;
+using AreaLib.Factory;
 using Microsoft.Extensions.DependencyInjection;
-using SquareLib.Extensions;
-using SquareLib.Factory;
 
-namespace SquareLib
+namespace AreaLib
 {
     public static class CalculatorFactoryBuilder // точка входа, если в консюмере не используется DI
     {

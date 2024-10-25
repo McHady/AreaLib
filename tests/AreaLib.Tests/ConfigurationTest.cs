@@ -1,5 +1,4 @@
-﻿using SquareLib;
-using SquareLib.Calculator;
+﻿using AreaLib.Calculator;
 
 namespace AreaLib.Tests
 {
@@ -38,7 +37,7 @@ namespace AreaLib.Tests
             });
 
             var calculator = factory.Build<TestTupleInput>();
-            (double A, double B) input = (20, 10);
+            TestTupleInput input = (20, 10);
 
             Assert.Equal(input.A * input.B, calculator.Calculate(input));  
         }

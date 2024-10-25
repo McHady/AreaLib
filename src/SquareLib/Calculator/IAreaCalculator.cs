@@ -1,4 +1,4 @@
-﻿namespace SquareLib.Calculator;
+﻿namespace AreaLib.Calculator;
 
 public interface IAreaCalculator<T>
 {

@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using SquareLib.Calculator;
+﻿using AreaLib.Calculator;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace SquareLib.Factory.Impl;
+namespace AreaLib.Factory.Impl;
 
 internal class DICalculatorFactory : ICalculatorFactory
 {

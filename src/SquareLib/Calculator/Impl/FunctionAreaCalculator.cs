@@ -1,14 +1,14 @@
-﻿namespace SquareLib.Calculator.Impl
+﻿namespace AreaLib.Calculator.Impl
 {
     internal class FunctionAreaCalculator<TInput> : IAreaCalculator<TInput>
     {
-        private readonly Func<TInput, double> funct;
+        private readonly Func<TInput, double> _func;
 
         public FunctionAreaCalculator(Func<TInput, double> areaCalculator) 
         { 
-            this.funct = areaCalculator;
+            _func = areaCalculator;
         }
         public double Calculate(TInput input)
-            => funct!.Invoke(input);
+            => _func!.Invoke(input);
     }
 }

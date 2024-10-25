@@ -1,6 +1,6 @@
-﻿using SquareLib.Calculator.Inputs;
+﻿using AreaLib.Calculator.Inputs;
 
-namespace SquareLib.Calculator.Impl;
+namespace AreaLib.Calculator.Impl;
 
 internal class CircleAreaByRadiusCalculator : IAreaCalculator<CircleWithRadius>
 {

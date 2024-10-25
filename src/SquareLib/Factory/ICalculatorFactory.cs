@@ -1,6 +1,6 @@
-﻿using SquareLib.Calculator;
+﻿using AreaLib.Calculator;
 
-namespace SquareLib.Factory;
+namespace AreaLib.Factory;
 
 public interface ICalculatorFactory
 {

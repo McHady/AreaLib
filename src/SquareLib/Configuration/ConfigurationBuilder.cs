@@ -1,5 +1,5 @@
-﻿using SquareLib.Calculator;
-using SquareLib.Calculator.Impl;
+﻿using AreaLib.Calculator;
+using AreaLib.Calculator.Impl;
 
 namespace AreaLib.Configuration;
 

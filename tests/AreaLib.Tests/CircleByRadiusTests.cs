@@ -1,6 +1,5 @@
-﻿using SquareLib.Calculator.Inputs;
-using SquareLib.Calculator;
-using SquareLib;
+﻿using AreaLib.Calculator;
+using AreaLib.Calculator.Inputs;
 
 namespace AreaLib.Tests
 {
